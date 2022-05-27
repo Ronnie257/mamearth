@@ -1,0 +1,215 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup/Login</title>
+
+    <style>
+        h2{
+            font-family: 'Nunito', sans-serif;
+            color:#4DB6AC;
+            font-size: 18px;
+        }
+        p{
+            font-family: 'Nunito', sans-serif;
+            font-size: 15px;
+        
+        }
+    form{
+        width: 10%;
+    }
+    input {
+        margin-top: 8%;
+    }
+    #box{
+        
+        /* vertical-align: top; */
+        /* border: 1px solid black; */
+        height: 650px;
+        width: 100%;
+        margin: auto;
+        margin-top: 80px;
+        background-color: #F5F5F5;
+        padding-top: 35px;
+        
+      
+    }
+    #box2{
+        
+        /* display: inline-block; */
+        margin: auto;
+        background-color: white;
+        /* border: 1px solid red; */
+        height: 620px;
+        width: 1250px;
+        
+      
+       /* vertical-align: top; */
+       /* margin-top: 150px; */
+
+    }
+    #box3{
+       
+        display: inline-block;     
+/* border: 1px solid green; */
+height: 550px;
+width: 430px;
+margin-left: 700px;
+margin-top: -590px;
+
+vertical-align: top;
+
+    }
+    #box4{
+        
+        vertical-align: top;
+        /* border: 3px solid blue; */
+        height: 550px;
+        width: 380px;
+        display: inline-block;
+        
+        
+    }
+    #midline{
+        
+        display: inline-block;
+        /* border: 1px solid rgba(128, 128, 128, 0.178); */
+        height: 620px;
+        width:1px;
+        background-color:rgba(121, 116, 116, 0.178);
+        margin-left: 280px;
+     
+    }
+    input{
+        border-radius: 5px;
+        /* border-color: #f5f5f5a6; */
+        padding: 12px;
+        margin: 10px 0;
+        width: 400px;
+        border-color: #f5f5f5e1;
+        border: 1px solid rgb(194, 178, 178);
+
+    }
+    #img{
+        margin-top: 10px;
+        margin-left: 10px;
+
+    }
+    #signup{
+        background-color: rgb(0,175,239);
+        width: 384px;
+        height: 46px;
+        font-family: 'Nunito', sans-serif;
+        font-size: 18px;
+        color: white;
+        border-radius: 5px;
+        border:none;
+        /* margin-left: 100px; */
+     
+    }
+    #signupText{
+        /* background-color: #26A69A; */
+        width: 384px;
+        height: 20px;
+        font-family: 'Nunito', sans-serif;
+        font-size: 14px;
+        /* color: white; */
+        border-radius: 5px;
+    }
+    span{
+        color: #009688;
+    }
+    #loginText{
+        width: 384px;
+        height: 20px;
+        font-family: 'Nunito', sans-serif;
+        font-size: 14px;
+        /* color: white; */
+        border-radius: 5px;
+        text-align: right;
+    }
+
+
+    </style>
+</head>
+<body>
+
+
+
+<!-- ................................................................................................................ -->
+
+    <div id = "box">
+        
+       <div id = box2> 
+       
+        <div> 
+
+        <div id ="box4">
+
+            <img id = "img" src ="https://cdn.sharafdg.com/cdn-cgi/image/width=600,height=600,fit=pad/assets/7/0/0/8/70086ec5378574bd3ca0d7de9be08faef7415c13_dbe16cf381964ea8bbcc38ebc552d06e.jpg" />
+            </div>
+             
+            <div id = "midline">
+                 
+            </div>
+        <div id = "box3"> 
+
+       
+    <h2> Sign Up</h2>
+    <p> Signup now & refer to get ₹ 50 MINCASH. We don't share your personal details with anyone.</p>
+<!-- <form id="myForm" action ="" >  -->
+
+<input type = "text" id = "name" placeholder = "Name"/>
+<input type = "number" id = "number" placeholder = "Mobile Number"/>
+<input type = "text" id = "email" placeholder = "Email"/>
+<input type = "password" id = "setPassword" placeholder = "Set Password"/>
+<!-- <input type = "password" id = "confirmPassword" placeholder = "Confirm Password"/> -->
+
+<p id="signupText"> By signing up, you agree to our <span>Terms and Conditions</span></p>
+<button id ="signup"> SIGN UP </button>
+
+<p id="loginText"> Existing user? <span>Login </span></p>
+<!-- </form> -->
+</div>
+    </div>
+        </div>
+           </div>  
+            
+
+
+    
+</body>
+</html>
+
+<script>
+
+document.querySelector("button").addEventListener("click", signUp)
+var userArr = JSON.parse(localStorage.getItem("userData")) || [];
+
+function signUp(){
+    var name = document.getElementById("name").value
+    var number = document.getElementById("number").value
+    var email = document.getElementById("email").value
+    var setPassword = document.getElementById("setPassword").value
+    // var confirmPassword = document.getElementById("confirmPassword").value
+
+    var userCredentials ={
+        name: name,
+        number: number,
+        email: email,
+        setPassword : setPassword,
+        // confirmPassword: confirmPassword,
+
+    }
+    userArr.push(userCredentials);
+    localStorage.setItem("userData", JSON.stringify(userArr))
+
+    window.location.href = "login.html"
+}
+
+
+</script>
